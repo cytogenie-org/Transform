@@ -59,4 +59,20 @@ public abstract class Transform
 	 * @return The slope of the inverse transform at the scale point
 	 */
 	abstract protected double slope (double scale);
+	
+	public double []scale(final double []values){
+		double []out=new double[values.length];
+		for (int i=0;i<values.length;i++) {
+			out[i]=this.scale(values[i]);
+		}
+		return out;
+	}
+	
+	public double []inverse(final double []values){
+		double []out=new double[values.length];
+		for (int i=0;i<values.length;i++) {
+			out[i]=this.inverse(values[i]);
+		}
+		return out;
+	}
 }

@@ -10,3 +10,4 @@ jar cf ../../../../../transform.jar edu
 cd ..
 rm -r classes
 popd
+gsutil cp transform.jar gs://cytogenie.app/GitHub/AutoGate/jars

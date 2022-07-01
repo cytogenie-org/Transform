@@ -59,7 +59,7 @@ public class Hyperlog
 	 * @param bins
 	 *          number of bins in the lookup table
 	 */
-	protected Hyperlog(double T, double W, double M, double A, int bins)
+	public Hyperlog(double T, double W, double M, double A, int bins)
 	{
 		if (T <= 0)
 			throw new TransformParameterException("T is not positive");

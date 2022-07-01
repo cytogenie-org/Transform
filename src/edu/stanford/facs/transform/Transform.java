@@ -60,6 +60,11 @@ public abstract class Transform
 	 */
 	abstract protected double slope (double scale);
 	
+	/**
+	 * Multiple calls to scale(double
+	 * @param values
+	 * @return
+	 */
 	public double []scale(final double []values){
 		double []out=new double[values.length];
 		for (int i=0;i<values.length;i++) {
@@ -68,6 +73,12 @@ public abstract class Transform
 		return out;
 	}
 	
+	/**
+	 * Multiple calls to inverse(double) 
+	 * @param values
+	 * @return
+	 */
+
 	public double []inverse(final double []values){
 		double []out=new double[values.length];
 		for (int i=0;i<values.length;i++) {

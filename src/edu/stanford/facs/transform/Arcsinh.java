@@ -29,7 +29,7 @@ public class Arcsinh
 	 */
 	public final double a, b, c;
 
-	protected Arcsinh(double T, double M, double A, int bins)
+	public Arcsinh(double T, double M, double A, int bins)
 	{
 		if (T <= 0)
 			throw new TransformParameterException("T is not positive");

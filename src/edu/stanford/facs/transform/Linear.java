@@ -26,7 +26,7 @@ public class Linear
 	 */
 	public final double a, b;
 
-	protected Linear(double T, double A, int bins)
+	public Linear(double T, double A, int bins)
 	{
 		if (T <= 0)
 			throw new TransformParameterException("T is not positive");

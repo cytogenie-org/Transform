@@ -26,7 +26,7 @@ public class Logarithmic
 	 */
 	public final double a, b;
 
-	protected Logarithmic(double T, double M, int bins)
+	public Logarithmic(double T, double M, int bins)
 	{
 		if (T <= 0)
 			throw new TransformParameterException("T is not positive");
@@ -92,5 +92,10 @@ public class Logarithmic
 		}
 
 		return label;
+	}
+	
+	public static void main(String []args) {
+		Logarithmic l=new Logarithmic(262144, 5.41853992);
+		l.scale(100000);
 	}
 }

@@ -24,7 +24,7 @@ public class Linear
 	/**
 	 * Actual parameter of the linear scale as implemented
 	 */
-	public final double a, b;
+	public final double a, b, range;
 
 	public Linear(double T, double A, int bins)
 	{
@@ -32,8 +32,6 @@ public class Linear
 			throw new TransformParameterException("T is not positive");
 		if (T < A)
 			throw new TransformParameterException("T is less than A");
-		if (A < 0)
-			throw new TransformParameterException("A is negative");
 
 		// standard parameters
 		this.T = T;
@@ -42,6 +40,7 @@ public class Linear
 		// actual parameters
 		a = (T + A);
 		b = -A;
+		range=T-A;
 	}
 
 	public Linear(double T, double A)
@@ -56,12 +55,12 @@ public class Linear
 
 	public double scale (double value)
 	{
-		return (value - b) / a;
+		return (value - A) / range;
 	}
 
 	public double inverse (double scale)
 	{
-		return a * scale + b;
+		return range * scale + A;
 	}
 
 	protected double slope (double scale)
